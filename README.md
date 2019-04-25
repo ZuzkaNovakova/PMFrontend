@@ -113,12 +113,13 @@ priority - String (enum)
 |POST|api/auth/signup|Log in user to app and set user to session (Body: username, password)|
 |POST|api/auth/login|Register user to app and set user to session (Body: username, password)|
 |POST|api/auth/logout|Log out user from app and remove session|
-|GET|api/projects|Show all projects|
-|GET|api/projects/deptName |Show dept projects|
-|GET|api/projects/:id|Show project detail|
-|POST|api/projects/:id/update |Update a project|
+|GET|api/:userId/projects/Show all projects|
+|GET|api/:userId/projects/deptName |Show dept projects|
+|GET|api/:userId/projects/:id|Show project detail|
+|PUT|api/:userId/projects/:id/update |Update a project|
 |GET|api/profile |Show profile|
-|POST|api/projects/:id/delete |Delete a project|
+|POST|api/:userId/projects/:id/delete |Delete a project|
+|POST|api/:userId/projects/create |Create a project|
 
   
 

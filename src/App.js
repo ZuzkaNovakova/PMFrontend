@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { Switch } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import Private from "./pages/Private";
+import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import NewProject from "./components/NewProject";
 
 import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./components/AnonRoute";
@@ -15,12 +16,13 @@ class App extends Component {
     return (
       <AuthProvider>
         <div className="container">
-          <h1>Basic React Authentication</h1>
+          <h1>Manage your Project</h1>
           <Navbar />
           <Switch>
             <AnonRoute path="/signup" component={Signup} />
             <AnonRoute path="/login" component={Login} />
-            <PrivateRoute path="/private" component={Private} />
+            <PrivateRoute path="/profile" exact component={Profile} />
+            <PrivateRoute path="/profile/projects/new" exact component={ NewProject } />
           </Switch>
         </div>
       </AuthProvider>
