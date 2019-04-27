@@ -10,7 +10,7 @@ class Profile extends Component {
       <div>
         <h1>Welcome {username}</h1>
         <Link to={"/profile/projects/new"}><button>Create a Project</button></Link>
-        <button>All Projects</button>
+        <Link to={"/profile/allprojects"}><button>All Projects</button></Link>
         <button>Search your Department Projects</button>
       </div>
     );

@@ -3,7 +3,7 @@ import axios from "axios";
 class Project {
   constructor() {
     this.project = axios.create({
-      baseURL: "http://localhost:5000",
+      baseURL: process.env.REACT_APP_MY_APP,
       withCredentials: true
     });
   }
@@ -11,7 +11,7 @@ class Project {
 create(projectToCreate, userId) {
   console.log('PROJECT IN SERVICE: ', projectToCreate, userId);
   return this.project
-    .post(`/project-routes/new/${userId}`, { projectToCreate })
+    .post(`/project-routes/new/${userId}`, projectToCreate)
     .then(({ data }) => data);
   }
 }

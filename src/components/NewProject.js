@@ -21,7 +21,7 @@ class NewProject extends Component {
   }
 
  
-
+  // BE CAREFUL WITH THE SENT OBJECT TO THE DATABASE
   handleFormSubmit = (event) => {
     event.preventDefault();
     projectService.create(this.state, this.props.user._id)

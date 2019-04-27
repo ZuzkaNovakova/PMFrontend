@@ -6,6 +6,7 @@ import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import NewProject from "./components/NewProject";
+import AllProjects from "./components/AllProjects";
 
 import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./components/AnonRoute";
@@ -23,6 +24,7 @@ class App extends Component {
             <AnonRoute path="/login" component={Login} />
             <PrivateRoute path="/profile" exact component={Profile} />
             <PrivateRoute path="/profile/projects/new" exact component={ NewProject } />
+            <PrivateRoute path="/profile/allprojects" exact component={ AllProjects } />
           </Switch>
         </div>
       </AuthProvider>
