@@ -9,8 +9,6 @@ class Project {
   }
 
 
-  /*!!!!!!!!!ZMENIT RUTY DLE BACKEND!!!!!*/
-
 create(projectToCreate) {
   console.log('PROJECT IN SERVICE: ', projectToCreate);
   return this.project
@@ -25,8 +23,6 @@ list() {
     .get('/project-routes/allprojects')
     .then(({data}) => data);
   };
-/*list pak pouzit v React - component, zkontrolovat rutu, jestli 
-konci na allproject nebo pak userid*/
 }
 
 const projectService = new Project();
