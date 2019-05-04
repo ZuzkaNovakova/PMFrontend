@@ -8,12 +8,25 @@ class Project {
     });
   }
 
-create(projectToCreate, userId) {
-  console.log('PROJECT IN SERVICE: ', projectToCreate, userId);
+
+  /*!!!!!!!!!ZMENIT RUTY DLE BACKEND!!!!!*/
+
+create(projectToCreate) {
+  console.log('PROJECT IN SERVICE: ', projectToCreate);
   return this.project
-    .post(`/project-routes/new/${userId}`, projectToCreate)
+    .post(`/project-routes/new`, projectToCreate)
     .then(({ data }) => data);
   }
+
+
+list() {
+  console.log('list');
+  return this.project
+    .get('/project-routes/allprojects')
+    .then(({data}) => data);
+  };
+/*list pak pouzit v React - component, zkontrolovat rutu, jestli 
+konci na allproject nebo pak userid*/
 }
 
 const projectService = new Project();
